@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Tareas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Sistema de Gestión de Tareas</h1>
+    <div class="container">
+        <div class="filters">
+            <select id="filterStatus">
+                <option value="all">Todas las tareas</option>
+                <option value="pending">Pendientes</option>
+                <option value="completed">Completadas</option>
+            </select>
+        </div>
+        <input type="text" id="taskInput" placeholder="Escribe una nueva tarea...">
+        <input type="text" id="userNameInput" placeholder="Escribe tu nombre...">
+        <select id="priorityInput">
+            <option value="low">Baja</option>
+            <option value="medium">Media</option>
+            <option value="high">Alta</option>
+        </select>
+        <button onclick="addTask()">Agregar Tarea</button>
+        <ul id="taskList"></ul> <!-- Este elemento es crucial -->
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('fondo.jpg');
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al fondo */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: wheat;
+    font-size: 3.5rem;
+    margin-top: 80px;
+    margin-bottom: 20px; /* Espacio entre el h1 y el contenedor */
+}
+
+/* Estilo para las cajas (contenedores) */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; /* Solo cambia la sombra */
+}
+
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    /* Elimina transformaciones como translate o scale */
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+input[type="text"] {
+    width: calc(70% - 10px);
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Ajustar el espaciado entre los campos de entrada y el botón */
+input[type="text"],
+select {
+    margin-bottom: 10px; /* Añade espacio inferior entre los campos */
+    display: block; /* Asegura que cada elemento esté en una nueva línea */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Estilo para el botón */
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Solo cambia el color */
+    margin-top: 10px; /* Añade espacio superior al botón */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+}
+
+button:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el ratón */
+    /* Elimina transformaciones o sombras que puedan causar movimiento */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Ajusta este valor si es necesario */
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+li.task.high {
+    border-left: 5px solid #ff4d4d;
+}
+
+li.task.medium {
+    border-left: 5px solid #ffc107;
+}
+
+li.task.low {
+    border-left: 5px solid #28a745;
+}
+
+li span.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.priority {
+    font-weight: bold;
+    color: #007BFF; /* Azul para destacar el nombre del usuario */
+    margin-left: 5px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #a71d2a;
+    transform: translateY(-2px);
+}
+
+/* Estilo para tareas con prioridad alta */
+.task.high {
+    border-left: 5px solid #ff4d4d;
+}
+
+/* Estilo para tareas con prioridad media */
+.task.medium {
+    border-left: 5px solid #ffc107;
+}
+
+/* Estilo para tareas con prioridad baja */
+.task.low {
+    border-left: 5px solid #28a745;
+}
+
+/* Estilo para tareas completadas */
+.task .completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+        background-size: cover; /* Asegura que la imagen siga cubriendo toda la pantalla */
+        background-position: center; /* Centra la imagen en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reduce el tamaño del título */
+        margin-top: 40px; /* Ajusta el margen superior */
+    }
+
+    .container {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .filters {
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: stretch; /* Alinea los elementos al ancho completo */
+        gap: 10px; /* Añade espacio entre los elementos */
+    }
+
+    .filters select,
+    input[type="text"] {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin-right: 0; /* Elimina el margen derecho */
+    }
+
+    button {
+        width: 100%; /* Botón ocupa todo el ancho */
+        padding: 12px; /* Ajusta el padding */
+    }
+
+    ul {
+        margin-top: 10px; /* Reduce el margen superior */
+    }
+
+    li {
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        padding: 15px; /* Ajusta el padding */
+    }
+
+    .delete-btn {
+        width: 100%; /* Botón ocupa todo el ancho */
+        margin-top: 10px; /* Añade espacio superior */
+    }
+}
+
+/* Estilos para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* Reduce aún más el tamaño del título */
+    }
+
+    .filters {
+        gap: 5px; /* Reduce el espacio entre los elementos */
+    }
+
+    li {
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .delete-btn {
+        font-size: 0.8rem; /* Reduce el tamaño del texto del botón */
+        padding: 8px; /* Ajusta el padding */
+    }
+}
